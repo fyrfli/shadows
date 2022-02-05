@@ -31,7 +31,7 @@ a:any-link {
      /* transition-property: width;
      transition-duration: 1s;
      transition-delay: 1s; */
-     transition: width .5s linear, background-color .5s;
+     transition: all .5s linear;
  }
 
  .card img {
