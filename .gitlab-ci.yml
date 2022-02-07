@@ -11,7 +11,7 @@ pages:
   - ssh-keyscan -t rsa $VM_IPADDRESS >> ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
   script:
-  - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/shadows && hostname && echo 'Welcome to `hostname`!!!' > /home/www/the-io/shadows/welcome.txt"
+  - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/shadows && echo 'Pipeline URL? $CI_JOB_URL' > /home/www/the-io/shadows/welcome.txt"
   artifacts:
     paths:
     - public
