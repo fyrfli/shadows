@@ -12,7 +12,7 @@ pages:
   - chmod 644 ~/.ssh/known_hosts
   script:
     - export
-    - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/shadows && cd /home/www/the-io/shadows/ && wget $CI_JOB_URL/artifacts"
+    - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/shadows && cd /home/www/the-io/shadows/ && wget $CI_JOB_URL/artifacts/download && unzip artifacts.zip"
   artifacts:
     paths:
     - public
