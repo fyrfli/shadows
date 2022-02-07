@@ -14,6 +14,6 @@ pages:
   - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/shadows && hostname && echo 'Welcome to `hostname`!!!' > /home/www/the-io/shadows/welcome.txt"
   artifacts:
     paths:
-    - /
+    - public
   only:
   - master
