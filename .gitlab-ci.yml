@@ -12,9 +12,10 @@ pages:
   - chmod 644 ~/.ssh/known_hosts
   script:
     - export
-    - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/$CI_PROJECT_NAME && cd /home/www/the-io/$CI_PROJECT_NAME/ && echo 'https://gitlab.fyrf.li/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_REF_NAME/download?job=$CI_JOB_NAME' > welcome.txt"
+    - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/$CI_PROJECT_NAME && cd /home/www/the-io/$CI_PROJECT_NAME/ && echo 'https://gitlab.fyrf.li/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_REF_NAME/file/public?job=$CI_JOB_NAME' > welcome.txt"
   artifacts:
     paths:
     - public
+    expire_in: 1 week
   only:
   - master
