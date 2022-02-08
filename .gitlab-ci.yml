@@ -15,6 +15,6 @@ pages:
     - ssh $SSH_USER@$VM_IPADDRESS "mkdir -p /home/www/the-io/$CI_PROJECT_NAME && cd /home/www/the-io/$CI_PROJECT_NAME/ && echo 'https://gitlab.fyrf.li/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_REF_NAME/download?job=$CI_JOB_NAME' > welcome.txt"
   artifacts:
     paths:
-    - $CI_PROJECT_NAME.zip
+    - public
   only:
   - master
